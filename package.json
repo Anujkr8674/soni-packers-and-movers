@@ -13,9 +13,6 @@
     "db:push": "prisma db push",
     "storage:setup": "tsx scripts/ensure-gallery-bucket.ts"
   },
-  "prisma": {
-    "seed": "tsx prisma/seed.ts"
-  },
   "dependencies": {
     "@prisma/client": "^6.19.0",
     "@supabase/supabase-js": "^2.105.4",

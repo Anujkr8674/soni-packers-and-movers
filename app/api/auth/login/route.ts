@@ -62,6 +62,10 @@ export async function POST(request: Request) {
       }
     }
 
+    if (!admin) {
+      return jsonError("Invalid login ID or password", 401);
+    }
+
     await setSessionCookie({ adminId: admin.id, loginId: admin.loginId });
 
     const response = jsonSuccess({ loginId: admin.loginId });

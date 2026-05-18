@@ -158,8 +158,8 @@ export default function DistrictServiceAreaMap({
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm animate-fade-left" style={{ animationDelay: "120ms" }}>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">Popular routes</p>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
-              {uniquePopularRoutes.map((route) => (
-                <li key={route} className="rounded-2xl bg-white px-3 py-2 text-slate-800 shadow-sm">
+              {uniquePopularRoutes.map((route, index) => (
+                <li key={`${route}-${index}`} className="rounded-2xl bg-white px-3 py-2 text-slate-800 shadow-sm">
                   {route}
                 </li>
               ))}
@@ -169,8 +169,8 @@ export default function DistrictServiceAreaMap({
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm animate-fade-right" style={{ animationDelay: "140ms" }}>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">Pincode coverage</p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {uniquePincodeCoverage.map((code) => (
-                <span key={code} className="inline-flex rounded-full bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm">
+              {uniquePincodeCoverage.map((code, index) => (
+                <span key={`${code}-${index}`} className="inline-flex rounded-full bg-white px-3 py-2 text-sm font-medium text-slate-700 shadow-sm">
                   {code}
                 </span>
               ))}
