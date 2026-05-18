@@ -1,5 +1,6 @@
 import PageHeroBanner from "../components/PageHeroBanner";
 import QuoteForm from "../components/QuoteForm";
+import { siteAssets } from "@/lib/site-assets";
 
 export default function GetQuotePage() {
   return (
@@ -8,7 +9,7 @@ export default function GetQuotePage() {
         title="Get Free Moving Quote"
         subtitle="Share your details and our team will call you shortly with a transparent estimate."
         breadcrumb="Get Quote"
-        backgroundImage="https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1600&q=80"
+        backgroundImage={siteAssets.pages.getQuote.heroBanner}
         heightClassName="min-h-[62vh]"
       />
 

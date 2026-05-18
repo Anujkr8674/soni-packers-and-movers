@@ -1,5 +1,9 @@
 import type { ComponentType } from "react";
 import { Briefcase, Home, Package, Shield, Truck, Warehouse } from "lucide-react";
+import { siteAssets } from "@/lib/site-assets";
+
+const SERVICE_HOUSE_BANNER = siteAssets.services.household.heroBanner;
+const SERVICE_OFFICE_BANNER = siteAssets.services.office.heroBanner;
 
 export type ServiceData = {
   slug: string;
@@ -69,7 +73,7 @@ export const services: ServiceData[] = [
     description:
       "Complete home relocation with careful packing, safe loading, transport, and unloading for a smooth family move.",
     details: ["Furniture dismantling and packing", "Fragile item protection", "Floor-to-floor shifting support"],
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1200&q=80",
+    image: SERVICE_HOUSE_BANNER,
     accent: "bg-sky-600",
     coverage: {
       heading: "Reliable packing and moving support across key Jharkhand cities",
@@ -93,9 +97,9 @@ export const services: ServiceData[] = [
     },
     faqs: genericFaqs,
     faqImages: [
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.services.household.faqSlideOne,
+      siteAssets.services.household.faqSlideTwo,
+      siteAssets.services.household.faqSlideThree,
     ],
     cta: {
       title: "Ready to move your home without the stress?",
@@ -111,7 +115,7 @@ export const services: ServiceData[] = [
     description:
       "Fast and organized office shifting with minimal downtime, careful handling of documents, electronics, and furniture.",
     details: ["IT equipment handling", "Weekend relocation options", "Workspace setup support"],
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    image: SERVICE_OFFICE_BANNER,
     accent: "bg-indigo-600",
     coverage: {
       heading: "Office relocation support planned around your business hours",
@@ -141,9 +145,9 @@ export const services: ServiceData[] = [
       ...genericFaqs.slice(1),
     ],
     faqImages: [
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.services.office.faqSlideOne,
+      siteAssets.services.office.faqSlideTwo,
+      siteAssets.services.office.faqSlideThree,
     ],
     cta: {
       title: "Need a smooth office relocation plan?",
@@ -159,7 +163,7 @@ export const services: ServiceData[] = [
     description:
       "Smooth city-to-city and state-to-state relocation with route planning, secure transport, and live coordination.",
     details: ["Jharkhand intercity routes", "Route planning and dispatch", "Real-time update support"],
-    image: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
+    image: siteAssets.services.domestic.cardImage,
     accent: "bg-orange-600",
     coverage: {
       heading: "Domestic moving coverage with route planning and live coordination",
@@ -189,9 +193,9 @@ export const services: ServiceData[] = [
       ...genericFaqs.slice(1),
     ],
     faqImages: [
-      "https://images.unsplash.com/photo-1501117716987-c8e1ecb2106e?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.services.domestic.faqSlideOne,
+      siteAssets.services.domestic.faqSlideTwo,
+      siteAssets.services.domestic.faqSlideThree,
     ],
     cta: {
       title: "Planning a city-to-city move?",
@@ -207,7 +211,7 @@ export const services: ServiceData[] = [
     description:
       "Skilled loading and unloading service with experienced manpower to keep your goods safe during every transfer.",
     details: ["Trained labour team", "Heavy item handling", "Damage-free unloading"],
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    image: siteAssets.services.loading.cardImage,
     accent: "bg-emerald-600",
     coverage: {
       heading: "Loading and unloading support for homes, shops, and offices",
@@ -237,9 +241,9 @@ export const services: ServiceData[] = [
       ...genericFaqs.slice(1),
     ],
     faqImages: [
-      "https://images.unsplash.com/photo-1584751728958-4f2e6a9c68c2?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.services.loading.faqSlideOne,
+      siteAssets.services.loading.faqSlideTwo,
+      siteAssets.services.loading.faqSlideThree,
     ],
     cta: {
       title: "Need a trained labour team for loading?",
@@ -255,7 +259,7 @@ export const services: ServiceData[] = [
     description:
       "Short-term and long-term storage for household and commercial goods in secure, organized warehouse spaces.",
     details: ["Clean storage space", "Inventory-safe handling", "Flexible storage periods"],
-    image: "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80",
+    image: siteAssets.services.storage.cardImage,
     accent: "bg-cyan-600",
     coverage: {
       heading: "Safe storage coverage for household and commercial goods",
@@ -285,9 +289,9 @@ export const services: ServiceData[] = [
       ...genericFaqs.slice(1),
     ],
     faqImages: [
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.services.storage.faqSlideOne,
+      siteAssets.services.storage.faqSlideTwo,
+      siteAssets.services.storage.faqSlideThree,
     ],
     cta: {
       title: "Need secure storage for your goods?",
@@ -303,7 +307,7 @@ export const services: ServiceData[] = [
     description:
       "Safe bike and car transport with proper loading, padding, and transit attention so your vehicle reaches securely.",
     details: ["Bike and car shifting", "Protective packaging support", "Door-to-door vehicle delivery"],
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+    image: siteAssets.services.vehicle.cardImage,
     accent: "bg-slate-900",
     coverage: {
       heading: "Vehicle transport coverage with careful route planning",
@@ -333,9 +337,9 @@ export const services: ServiceData[] = [
       ...genericFaqs.slice(1),
     ],
     faqImages: [
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1489824904134-891ab64532f1?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.services.vehicle.faqSlideOne,
+      siteAssets.services.vehicle.faqSlideTwo,
+      siteAssets.services.vehicle.faqSlideThree,
     ],
     cta: {
       title: "Need safe transport for your car or bike?",

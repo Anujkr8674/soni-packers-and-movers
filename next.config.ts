@@ -1,7 +1,41 @@
 import type { NextConfig } from "next";
 
+const remotePatterns: NextConfig["images"]["remotePatterns"] = [
+  {
+    protocol: "https",
+    hostname: "images.unsplash.com",
+  },
+  {
+    protocol: "https",
+    hostname: "api.dicebear.com",
+  },
+  {
+    protocol: "https",
+    hostname: "www.adarshindiapackers.com",
+  },
+  {
+    protocol: "https",
+    hostname: "videos.pexels.com",
+  },
+];
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+if (supabaseUrl) {
+  try {
+    remotePatterns.push({
+      protocol: "https",
+      hostname: new URL(supabaseUrl).hostname,
+      pathname: "/storage/v1/object/public/**",
+    });
+  } catch {
+    // Ignore invalid Supabase URLs and keep the static remote allow-list.
+  }
+}
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns,
+  },
 };
 
 export default nextConfig;

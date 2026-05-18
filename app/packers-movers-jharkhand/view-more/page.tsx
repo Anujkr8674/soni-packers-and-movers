@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Globe2, HandCoins, LifeBuoy, MapPinned, Rocket, Star } from "lucide-react";
 import { JharkhandStatePage } from "../../components/JharkhandPages";
 import { jharkhandDistricts } from "../locationData";
+import { siteAssets } from "@/lib/site-assets";
 
 export const metadata: Metadata = {
-  title: "More Jharkhand Districts | Soni Packers and Movers",
+  title: "More Jharkhand Districts | Sony Packers and Movers",
   description:
     "Explore more packers and movers service areas across Jharkhand and open district-specific pages for local relocation support.",
 };
@@ -15,7 +16,7 @@ export default function ViewMoreJharkhandPage() {
       title="Explore More Jharkhand Districts"
       eyebrow="District coverage"
       subtitle="Open any district page below to see local shifting support, service areas, and SEO-friendly location details."
-      heroImage="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80"
+      heroImage={siteAssets.pages.jharkhandViewMore.heroBanner}
       introTitle="All Jharkhand districts in one place"
       introCopy="The main location menu shows our top service areas, and this page keeps every Jharkhand district within one click. Each district page can be expanded later with its own city-specific content, while the URL structure stays clean for SEO."
       highlights={[
@@ -82,11 +83,10 @@ export default function ViewMoreJharkhandPage() {
         },
       ]}
       faqImages={[
-        "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1200&q=80",
+        siteAssets.common.routePlanning,
+        siteAssets.common.movingTeamThree,
+        siteAssets.common.packingMaterials,
       ]}
     />
   );
 }
-

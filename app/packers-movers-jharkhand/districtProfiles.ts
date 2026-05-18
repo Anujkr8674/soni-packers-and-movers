@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import { BadgeCheck, HandCoins, Rocket, ShieldCheck } from "lucide-react";
+import { siteAssets } from "@/lib/site-assets";
 
 type FAQItem = {
   question: string;
@@ -192,9 +193,9 @@ function buildDistrictProfile(districtName: string, slug: string, config: Distri
     pincodeCoverage: config.pincodeCoverage ?? districtPincodes[slug] ?? [],
     faqs: config.faqs ?? defaultFaqs(districtName),
     faqImages: [
-      "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+      siteAssets.common.movingTeamOne,
+      siteAssets.common.movingTeamTwo,
+      siteAssets.common.movingTeamThree,
     ],
     heroImage: config.heroImage,
   };
@@ -315,7 +316,7 @@ export function getDistrictProfile(districtName: string, slug: string): District
         "Based in Ranchi, we provide home shifting, office relocation, vehicle transport, and loading support across Ratu Road, Lalpur, Doranda, Harmu, Kanke, Booty More, and nearby routes.",
       localities: ["Hatia", "Harmu", "Lalpur", "Doranda", "Kanke", "Booty More", "Namkum", "Ratu Road"],
       nearbyDistricts: ["Ramgarh", "Hazaribagh", "Bokaro", "Khunti"],
-      heroImage: "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.movingTeamOne,
       faqs: [
         {
           question: "Do you provide packing and moving in Ranchi city?",
@@ -339,145 +340,145 @@ export function getDistrictProfile(districtName: string, slug: string): District
       introCopy: "We offer Bokaro packers and movers support for household shifting, office moves, vehicle transport, and loading with safe handling and route planning.",
       localities: ["Bokaro Steel City", "Sector 4", "Sector 9", "Chas", "Balidih", "Bermo", "Gomia", "Chandankyari"],
       nearbyDistricts: ["Dhanbad", "Giridih", "Ramgarh", "Hazaribagh"],
-      heroImage: "https://images.unsplash.com/photo-1524522173746-f628baad3644?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.office.faqSlideOne,
     },
     ramgarh: {
       introCopy: "We provide Ramgarh packers and movers service for local shifting, office relocation, vehicle transport, and loading with careful planning and verified manpower.",
       localities: ["Ramgarh Cantt", "Bara", "Rajrappa", "Patratu", "Gola", "Mandu", "Kuju", "Barkakana"],
       nearbyDistricts: ["Ranchi", "Hazaribagh", "Bokaro", "Chatra"],
-      heroImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.vehicle.cardImage,
     },
     hazaribagh: {
       introCopy: "We support Hazaribagh moves with household packing, office relocation, storage coordination, and safe transport across local areas and nearby districts.",
       localities: ["Hazaribagh town", "Barkagaon", "Ichak", "Katkamsandi", "Katkamdag", "Bishnugarh", "Padma"],
       nearbyDistricts: ["Ramgarh", "Chatra", "Koderma", "Giridih"],
-      heroImage: "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.storage.cardImage,
     },
     dhanbad: {
       introCopy: "We support packers and movers work in Dhanbad with house shifting, office relocation, vehicle transport, and loading help across the city and nearby coal-belt routes.",
       localities: ["Bank More", "Hirapur", "Saraidhela", "Jharia", "Sindri", "Katras", "Govindpur", "Dhaiya"],
       nearbyDistricts: ["Bokaro", "Giridih", "Jamtara", "Deoghar"],
-      heroImage: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.routePlanning,
     },
     jamshedpur: {
       introCopy: "For Jamshedpur, we arrange local and intercity shifting with careful packing across major commercial and residential belts of the steel city.",
       localities: ["Bistupur", "Sakchi", "Sonari", "Kadma", "Mango", "Telco", "Jugsalai", "Adityapur"],
       nearbyDistricts: ["Seraikela Kharsawan", "East Singhbhum", "West Singhbhum", "Bokaro"],
-      heroImage: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtDispatchPlanning,
     },
     deoghar: {
       introCopy: "We handle Deoghar packers and movers service for household relocation, office shifting, and vehicle transport around the temple town and nearby routes.",
       localities: ["Baidyanath Dham", "Jasidih", "Madhupur", "Rohini", "Castair's Town", "Sarath"],
       nearbyDistricts: ["Jamtara", "Giridih", "Dumka", "Godda"],
-      heroImage: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtLoadingWorkflow,
     },
     dumka: {
       introCopy: "In Dumka, we provide smooth packing and moving support with local pickup planning for homes, shops, and office movement across the district.",
       localities: ["Dumka town", "Hansdiha", "Kathikund", "Masalia", "Shikaripara", "Jarmundi"],
       nearbyDistricts: ["Deoghar", "Godda", "Pakur", "Sahebganj"],
-      heroImage: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtMovePlanning,
     },
     giridih: {
       introCopy: "We provide Giridih packers and movers service with careful packing, loading, and transport across town and nearby market belts.",
       localities: ["Giridih town", "Bagodar", "Dumri", "Tisri", "Khandoli", "Bengabad"],
       nearbyDistricts: ["Dhanbad", "Deoghar", "Koderma", "Hazaribagh"],
-      heroImage: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.domestic.cardImage,
     },
     godda: {
       introCopy: "Godda moves are handled with district-wise route planning for homes, offices, and vehicle transport across the town and rural service points.",
       localities: ["Godda town", "Mahagama", "Pathargama", "Poraiyahat", "Boarijor", "Meharma"],
       nearbyDistricts: ["Dumka", "Pakur", "Sahebganj", "Deoghar"],
-      heroImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.logisticsWarehouse,
     },
     gumla: {
       introCopy: "In Gumla, our packers and movers team supports residential shifting, office moves, and loading work with route planning for district and nearby village belts.",
       localities: ["Gumla town", "Bishunpur", "Raidih", "Basia", "Ghaghra", "Chainpur", "Dumri"],
       nearbyDistricts: ["Simdega", "Khunti", "Lohardaga", "West Singhbhum"],
-      heroImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.loading.faqSlideThree,
     },
     chatra: {
       introCopy: "Chatra packers and movers support is available for local shifting, office relocation, and vehicle movement with planning around town and connecting road routes.",
       localities: ["Chatra town", "Itkhori", "Simaria", "Hunterganj", "Tandwa", "Kanhachatti"],
       nearbyDistricts: ["Hazaribagh", "Koderma", "Latehar", "Ranchi"],
-      heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.movingTeamThree,
     },
     garhwa: {
       introCopy: "We offer Garhwa packers and movers service for household shifting and office relocation with reliable support for town and nearby transport routes.",
       localities: ["Garhwa town", "Nagar Untari", "Ranka", "Meral", "Bhawanathpur", "Ramna"],
       nearbyDistricts: ["Palamu", "Latehar", "Ranchi", "Lohardaga"],
-      heroImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.office.faqSlideOne,
     },
     jamtara: {
       introCopy: "Jamtara moves are planned with local and intercity support for households, offices, loading, and vehicle shifting across the district.",
       localities: ["Jamtara town", "Narayanpur", "Kundahit", "Nala", "Fatehpur", "Karma"],
       nearbyDistricts: ["Deoghar", "Dumka", "Giridih", "Dhanbad"],
-      heroImage: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.pages.gallery.heroBanner,
     },
     khunti: {
       introCopy: "We support Khunti packers and movers work for local shifting, office movement, and transport planning across the town and nearby routes.",
       localities: ["Khunti town", "Murhu", "Torpa", "Rania", "Arki", "Karra"],
       nearbyDistricts: ["Ranchi", "Simdega", "Gumla", "West Singhbhum"],
-      heroImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.office.faqSlideThree,
     },
     koderma: {
       introCopy: "Koderma packers and movers service covers home shifting, office relocation, and vehicle transport with safe loading across town and nearby belts.",
       localities: ["Koderma town", "Jhumri Telaiya", "Chandwara", "Domchanch", "Jainagar", "Markacho"],
       nearbyDistricts: ["Hazaribagh", "Giridih", "Chatra", "Ranchi"],
-      heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.loading.faqSlideTwo,
     },
     latehar: {
       introCopy: "Latehar shifting support is available for homes, offices, and vehicle transport with careful route planning for the district and forest-side routes.",
       localities: ["Latehar town", "Balumath", "Chandwa", "Barwadih", "Manika", "Mahuadanr"],
       nearbyDistricts: ["Palamu", "Garhwa", "Chatra", "Lohardaga"],
-      heroImage: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.domestic.faqSlideThree,
     },
     lohardaga: {
       introCopy: "We provide Lohardaga packers and movers support for residential shifting and office relocation with local route planning and quick support.",
       localities: ["Lohardaga town", "Kuru", "Bhandra", "Senha", "Kisko", "Peshrar"],
       nearbyDistricts: ["Ranchi", "Gumla", "Khunti", "Latehar"],
-      heroImage: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtCustomerSupport,
     },
     pakur: {
       introCopy: "Pakur packers and movers service is ideal for local shifting, loading, and vehicle movement across town, railway-side pockets, and nearby routes.",
       localities: ["Pakur town", "Malpahari", "Hiranpur", "Littipara", "Maheshpur", "Amrapara"],
       nearbyDistricts: ["Godda", "Sahebganj", "Dumka", "Deoghar"],
-      heroImage: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.household.faqSlideTwo,
     },
     palamu: {
       introCopy: "Palamu moves are handled with support for Medininagar and nearby towns, including household shifting, office relocation, and vehicle transport.",
       localities: ["Medininagar", "Daltonganj", "Hussainabad", "Haidernagar", "Chhatarpur", "Bishrampur", "Japla"],
       nearbyDistricts: ["Garhwa", "Latehar", "Chatra", "Ranchi"],
-      heroImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.vehicle.cardImage,
     },
     sahebganj: {
       introCopy: "Sahebganj packers and movers support covers the river-town belt, market areas, and nearby pickup points for home and office moves.",
       localities: ["Sahibganj town", "Rajmahal", "Borio", "Mandro", "Barharwa", "Pathna"],
       nearbyDistricts: ["Pakur", "Godda", "Deoghar", "Dumka"],
-      heroImage: "https://images.unsplash.com/photo-1524522173746-f628baad3644?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.services.office.faqSlideOne,
     },
     "seraikela-kharsawan": {
       introCopy: "Seraikela Kharsawan shifting service is arranged across Seraikela, Kharsawan, Chandil, Gamharia, and nearby industrial routes.",
       localities: ["Seraikela", "Kharsawan", "Chandil", "Gamharia", "Adityapur", "Ichagarh", "Nimdih"],
       nearbyDistricts: ["Jamshedpur", "West Singhbhum", "East Singhbhum", "Ranchi"],
-      heroImage: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.routePlanning,
     },
     simdega: {
       introCopy: "Simdega packers and movers support covers the district town and surrounding blocks with safe packing, loading, and route coordination.",
       localities: ["Simdega town", "Bano", "Kolebira", "Kurdeg", "Bolba", "Thethaitanger"],
       nearbyDistricts: ["Khunti", "Gumla", "West Singhbhum", "Khunti"],
-      heroImage: "https://images.unsplash.com/photo-1501117716987-c8e1ecb2106e?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtTruckLoading,
     },
     "west-singhbhum": {
       introCopy: "West Singhbhum moves are supported across Chaibasa and nearby mining and forest-side routes with careful packing and planned dispatch.",
       localities: ["Chaibasa", "Noamundi", "Manoharpur", "Chakradharpur", "Goilkera", "Jagannathpur", "Tonto"],
       nearbyDistricts: ["Seraikela Kharsawan", "East Singhbhum", "Simdega", "Ranchi"],
-      heroImage: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.logisticsWarehouse,
     },
     "east-singhbhum": {
       introCopy: "East Singhbhum shifting support covers Jamshedpur city and surrounding blocks with local packing, transport, and vehicle delivery planning.",
       localities: ["Jamshedpur", "Ghatshila", "Musabani", "Dumaria", "Baharagora", "Patamda", "Potka"],
       nearbyDistricts: ["Seraikela Kharsawan", "West Singhbhum", "Dhanbad", "Jamshedpur"],
-      heroImage: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtLoadingWorkflow,
     },
   };
 
@@ -487,10 +488,14 @@ export function getDistrictProfile(districtName: string, slug: string): District
     return buildDistrictProfile(districtName, slug, {
       localities: [`${districtName} town center`, `${districtName} market area`, `${districtName} residential belt`, `${districtName} bus stand`],
       nearbyDistricts: ["Ranchi", "Bokaro", "Hazaribagh", "Dhanbad"],
-      heroImage: "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80",
+      heroImage: siteAssets.common.districtDispatchPlanning,
     });
   }
 
   return buildDistrictProfile(districtName, slug, profile);
 }
+
+
+
+
 

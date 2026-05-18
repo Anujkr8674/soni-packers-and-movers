@@ -2,38 +2,35 @@
 
 import { Clock, ShieldCheck, Users, BadgeCheck } from "lucide-react";
 import { useInView } from "./useInView";
+import { siteAssets } from "@/lib/site-assets";
 
 const reasons = [
   {
     icon: ShieldCheck,
     title: "Safe and Secure Handling",
     desc: "Premium packing materials and careful loading for every item.",
-    image:
-      "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=900&q=80",
+    image: siteAssets.sections.whyChooseUs.safeHandling,
     points: ["Damage-prevention packing", "Handled by trained movers", "Secure transit process"],
   },
   {
     icon: Clock,
     title: "On-Time Delivery",
     desc: "Structured move plans with timely pickup and promised delivery.",
-    image:
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
+    image: siteAssets.sections.whyChooseUs.onTimeDelivery,
     points: ["Fast response team", "Live move coordination", "Strict time commitment"],
   },
   {
     icon: Users,
     title: "Trained Professionals",
     desc: "Experienced relocation crew for residential and office moves.",
-    image:
-      "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=900&q=80",
+    image: siteAssets.sections.whyChooseUs.trainedProfessionals,
     points: ["Background verified staff", "Skilled lifting & handling", "Polite support team"],
   },
   {
     icon: BadgeCheck,
     title: "Transparent Pricing",
     desc: "No hidden charges and complete quote clarity before booking.",
-    image:
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+    image: siteAssets.sections.whyChooseUs.transparentPricing,
     points: ["Written final quote", "No surprise add-ons", "Best value plans"],
   },
 ];
@@ -49,7 +46,7 @@ export default function WhyChooseUs() {
             isInView ? "translate-y-0 opacity-100 blur-0" : "translate-y-10 opacity-0 blur-[2px]"
           }`}
         >
-          Why Choose Soni Packers and Movers?
+          Why Choose Sony Packers and Movers?
         </h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {reasons.map((item, idx) => {

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Check, ChevronLeft, ChevronRight, Clock3, MapPin, Shield } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { siteAssets } from "@/lib/site-assets";
 
 type MediaItem = {
   type: "image" | "video";
@@ -15,19 +16,19 @@ type MediaItem = {
 const slides: MediaItem[] = [
   {
     type: "image",
-    src: "/media/hero-1.svg",
+    src: siteAssets.sections.heroSlider.slideOne,
     title: "Trusted Packers and Movers in Ranchi",
     subtitle: "Safe packing, fast shifting, and transparent pricing from start to finish.",
   },
   {
     type: "video",
-    src: "https://videos.pexels.com/video-files/4246208/4246208-hd_1920_1080_25fps.mp4",
+    src: siteAssets.sections.heroSlider.video,
     title: "Professional Team and Modern Moving Fleet",
     subtitle: "Well-trained staff and managed logistics for stress-free relocation.",
   },
   {
     type: "image",
-    src: "/media/hero-2.svg",
+    src: siteAssets.sections.heroSlider.slideTwo,
     title: "Household, Office and Vehicle Relocation",
     subtitle: "End-to-end support from Ratu Road, Ranchi to anywhere in India.",
   },
@@ -63,7 +64,7 @@ export default function HeroSlider() {
           <div className="absolute inset-0 mx-auto flex max-w-7xl items-center px-4 pb-24 pt-20 sm:px-6 sm:pb-28 md:pt-0 lg:px-8">
             <div className="max-w-3xl text-white">
               <p className="animate-fade-up mb-3 inline-block rounded-full bg-orange-600/90 px-4 py-1 text-sm font-semibold uppercase tracking-wide shadow-lg shadow-orange-950/30 animate-glow-shift">
-                Soni Packers and Movers
+                Sony Packers and Movers
               </p>
               <h1 className="animate-fade-up mb-5 text-4xl font-extrabold leading-tight md:text-6xl" style={{ animationDelay: "120ms" }}>
                 {slide.title}
@@ -79,7 +80,7 @@ export default function HeroSlider() {
                   Get Free Quote
                 </Link>
                 <Link
-                  href="https://wa.me/8674823125"
+                  href="https://wa.me/8674823125?text=Hello%21%20I%20need%20a%20shifting%20quote."
                   target="_blank"
                   className="inline-flex items-center gap-2 rounded-xl bg-green-500 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-600 hover:shadow-lg hover:shadow-green-500/30"
                 >

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useInView } from "./useInView";
+import { siteAssets } from "@/lib/site-assets";
 
 const steps = [
   { no: "1", title: "Free Survey", desc: "We assess your move and suggest the best relocation plan for your timeline." },
@@ -11,9 +12,9 @@ const steps = [
 ];
 
 const processSlides = [
-  "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+  siteAssets.sections.process.packingInAction,
+  siteAssets.sections.process.teamCoordination,
+  siteAssets.sections.process.securePacking,
 ];
 
 export default function Process() {

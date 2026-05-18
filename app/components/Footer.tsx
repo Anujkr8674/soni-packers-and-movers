@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-xl font-bold text-white">Soni Packers and Movers</h3>
+            <h3 className="mb-4 text-xl font-bold text-white">Sony Packers and Movers</h3>
             <p className="text-sm leading-6 text-slate-400">
               Reliable and affordable packers and movers in Ranchi for household shifting, office moves, vehicle transport, and
               storage.
@@ -84,14 +84,15 @@ export default function Footer() {
               <p className="flex items-start gap-2"><MapPin size={20} className="mt-0.5 text-orange-400" />Shop no- 302 Anmol plaza Ratu road Ranchi opposite Nirvachan bhawan.</p>
               
               <p className="flex items-center gap-2"><Phone size={16} className="text-orange-400" />6209280901</p>
+              <p className="flex items-center gap-2"><Phone size={16} className="text-orange-400" /> 6209580901</p>
                <p className="flex items-start gap-2"><FaWhatsapp size={20} className="mt-0.5 text-green-400" />9835983331</p>
-              <p className="flex items-center gap-2"><Mail size={16} className="text-orange-400" />info@sonipackers.com</p>
+              <p className="flex items-center gap-2"><Mail size={16} className="text-orange-400" />info@sonypackers.com</p>
               <p className="flex items-center gap-2"><Clock size={16} className="text-orange-400" />24x7 Support</p>
             </div>
           </div>
         </div>
         <div className="mt-10 border-t border-slate-800 pt-6 text-center text-sm text-slate-400">
-          &copy; {year} Soni Packers and Movers. All rights reserved.
+          &copy; {year} Sony Packers and Movers. All rights reserved.
         </div>
       </div>
     </footer>

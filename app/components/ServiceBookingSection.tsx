@@ -50,7 +50,7 @@ export default function ServiceBookingSection({
               isInView ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
             }`}
           >
-            <h3 className="text-2xl font-black text-slate-950">Why book with Soni Packers and Movers?</h3>
+            <h3 className="text-2xl font-black text-slate-950">Why book with Sony Packers and Movers?</h3>
             <p className="mt-2 text-slate-600">{rightLabel}</p>
             <div className="mt-5 space-y-3">
               {rightItems.map((item, idx) => (

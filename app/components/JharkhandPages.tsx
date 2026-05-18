@@ -375,6 +375,8 @@ export function JharkhandDistrictPage({
 
               <DistrictServiceAreaMap
                 districtName={district.name}
+                districtSlug={district.slug}
+                stateName="Jharkhand"
                 mapQuery={mapQuery}
                 mapHeading={mapHeading}
                 popularRoutes={popularRoutes}

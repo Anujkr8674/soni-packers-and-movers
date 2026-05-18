@@ -15,10 +15,10 @@ type CallToActionProps = {
 
 export default function CallToAction({
   title = "Ready to Move with Confidence?",
-  subtitle = "Call Soni Packers and Movers now for a fast survey and transparent quote.",
+  subtitle = "Call Sony Packers and Movers now for a fast survey and transparent quote.",
   primaryHref = "/get-quote",
   primaryLabel = "Get Free Quote",
-  secondaryHref = "https://wa.me/8674823125",
+  secondaryHref = "https://wa.me/8674823125?text=Hello%21%20I%20need%20a%20shifting%20quote.",
   secondaryLabel = "WhatsApp Us",
 }: CallToActionProps) {
   const { ref, isInView } = useInView<HTMLDivElement>();

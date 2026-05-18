@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<LocalityPag
   }
 
   return {
-    title: `Packers and Movers in ${localityName}, ${districtData.name} | Soni Packers and Movers`,
+    title: `Packers and Movers in ${localityName}, ${districtData.name} | Sony Packers and Movers`,
     description: `Trusted movers and packers service in ${localityName}, ${districtData.name} for household shifting, office relocation, and vehicle transport.`,
   };
 }

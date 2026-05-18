@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useInView } from "./useInView";
+import { siteAssets } from "@/lib/site-assets";
 
 type FAQItem = {
   question: string;
@@ -18,7 +19,7 @@ type FAQSectionProps = {
 
 const defaultFaqs: FAQItem[] = [
   {
-    question: "How early should I book Soni Packers and Movers?",
+    question: "How early should I book Sony Packers and Movers?",
     answer:
       "For best slot availability, book at least 3-5 days in advance. For urgent moves, contact us directly and we will try to arrange same-day support.",
   },
@@ -40,9 +41,9 @@ const defaultFaqs: FAQItem[] = [
 ];
 
 const defaultImages = [
-  "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+  siteAssets.sections.faq.faqSlideOne,
+  siteAssets.sections.faq.faqSlideTwo,
+  siteAssets.sections.faq.faqSlideThree,
 ];
 
 export default function FAQSection({

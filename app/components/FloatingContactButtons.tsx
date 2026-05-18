@@ -2,6 +2,7 @@ import { PhoneCall } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 const whatsappNumber = "919835983331";
+const whatsappMessage = "Hello! I need a shifting quote.";
 const phoneNumber = "6209280901";
 
 export default function FloatingContactButtons() {
@@ -9,7 +10,7 @@ export default function FloatingContactButtons() {
     <div className="fixed bottom-5 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
       <a
         href={`tel:${phoneNumber}`}
-        aria-label="Call Soni Packers and Movers"
+        aria-label="Call Sony Packers and Movers"
         className="group relative flex h-16 w-16 items-center justify-center rounded-full border border-white/80 bg-[#1d74ff] text-white shadow-[0_18px_40px_rgba(29,116,255,0.35)] transition duration-300 ease-out animate-float-slow hover:scale-110 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue-300/70"
       >
         <span className="absolute inset-[-7px] rounded-full border border-white/50 opacity-40 animate-pulse" />
@@ -18,7 +19,7 @@ export default function FloatingContactButtons() {
       </a>
 
       <a
-        href={`https://wa.me/${whatsappNumber}`}
+        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

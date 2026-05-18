@@ -3,152 +3,48 @@
 import { useEffect, useMemo, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import PageHeroBanner from "../components/PageHeroBanner";
+import { siteAssets } from "@/lib/site-assets";
 
 type GalleryItem = {
   src: string;
-  type: "Residential" | "Office" | "Packing" | "Vehicle" | "Warehouse" | "Intercity";
+  type: string;
   title: string;
 };
 
-const categories = ["All", "Residential", "Office", "Packing", "Vehicle", "Warehouse", "Intercity"] as const;
-
-const gallery: GalleryItem[] = [
-  {
-    src: "https://images.unsplash.com/photo-1556911220-bda9f7de1bc1?auto=format&fit=crop&w=1200&q=80",
-    type: "Residential",
-    title: "Home shifting setup",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
-    type: "Office",
-    title: "Office relocation",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1200&q=80",
-    type: "Packing",
-    title: "Careful packing",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    type: "Vehicle",
-    title: "Vehicle transport",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80",
-    type: "Warehouse",
-    title: "Secure storage",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
-    type: "Intercity",
-    title: "Long-distance move",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1200&q=80",
-    type: "Residential",
-    title: "Apartment move",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
-    type: "Office",
-    title: "Workspace packing",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
-    type: "Packing",
-    title: "Loading assistance",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
-    type: "Vehicle",
-    title: "Bike transport",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
-    type: "Warehouse",
-    title: "Warehouse inventory",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80",
-    type: "Intercity",
-    title: "City-to-city delivery",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80",
-    type: "Residential",
-    title: "Home loading team",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=80",
-    type: "Office",
-    title: "Conference room shift",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
-    type: "Packing",
-    title: "Wrapping furniture",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80",
-    type: "Vehicle",
-    title: "Car carrier route",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
-    type: "Warehouse",
-    title: "Storage aisle",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
-    type: "Intercity",
-    title: "Intercity logistics",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-    type: "Residential",
-    title: "Apartment furniture",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
-    type: "Office",
-    title: "Office dispatch",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?auto=format&fit=crop&w=1200&q=80",
-    type: "Packing",
-    title: "Safe cartons",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
-    type: "Vehicle",
-    title: "Two-wheeler load",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1565891741441-64926e441838?auto=format&fit=crop&w=1200&q=80",
-    type: "Warehouse",
-    title: "Secure shelving",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1501117716987-c8e1ecb2106e?auto=format&fit=crop&w=1200&q=80",
-    type: "Intercity",
-    title: "Route planning",
-  },
-];
-
 export default function GalleryPage() {
-  const [filter, setFilter] = useState<(typeof categories)[number]>("All");
+  const [gallery, setGallery] = useState<GalleryItem[]>([]);
+  const [categories, setCategories] = useState<string[]>(["All"]);
+  const [loading, setLoading] = useState(true);
+  const [filter, setFilter] = useState("All");
   const [page, setPage] = useState(1);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    void (async () => {
+      try {
+        const res = await fetch("/api/gallery/public");
+        const data = await res.json();
+        if (res.ok && data.success) {
+          setGallery(data.items ?? []);
+          setCategories(["All", ...(data.categories ?? [])]);
+        }
+      } catch {
+        // Keep empty gallery on error
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, []);
+
   const filteredItems = useMemo(() => {
     return filter === "All" ? gallery : gallery.filter((item) => item.type === filter);
-  }, [filter]);
+  }, [filter, gallery]);
 
   const totalPages = Math.max(1, Math.ceil(filteredItems.length / 12));
   const displayPage = Math.min(page, totalPages);
   const pagedItems = filteredItems.slice((displayPage - 1) * 12, displayPage * 12);
 
-  const activeItem = activeIndex === null ? null : pagedItems[activeIndex] ?? null;
+  const activeItem = activeIndex === null ? null : (pagedItems[activeIndex] ?? null);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -185,7 +81,7 @@ export default function GalleryPage() {
         title="Gallery"
         subtitle="Visual highlights from recent residential, office, packing, and transport projects."
         breadcrumb="Gallery"
-        backgroundImage="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80"
+        backgroundImage={siteAssets.pages.gallery.heroBanner}
         heightClassName="min-h-[58vh]"
       />
 
@@ -211,29 +107,35 @@ export default function GalleryPage() {
             </div>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {pagedItems.map((item, idx) => (
-              <button
-                key={`${item.src}-${idx}`}
-                type="button"
-                onClick={() => setActiveIndex(idx)}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="relative">
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </div>
-                <div className="p-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">{item.type}</p>
-                  <h3 className="mt-2 text-lg font-bold text-slate-950">{item.title}</h3>
-                </div>
-              </button>
-            ))}
-          </div>
+          {loading ? (
+            <p className="mt-10 text-center text-slate-500">Loading gallery...</p>
+          ) : filteredItems.length === 0 ? (
+            <p className="mt-10 text-center text-slate-500">No gallery images yet.</p>
+          ) : (
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {pagedItems.map((item, idx) => (
+                <button
+                  key={`${item.src}-${idx}`}
+                  type="button"
+                  onClick={() => setActiveIndex(idx)}
+                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white text-left shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <div className="relative">
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
+                  <div className="p-4">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-600">{item.type}</p>
+                    <h3 className="mt-2 text-lg font-bold text-slate-950">{item.title}</h3>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
 
           {filteredItems.length > 12 ? (
             <div className="mt-10 flex items-center justify-center gap-3">

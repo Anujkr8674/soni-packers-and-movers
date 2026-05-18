@@ -5,6 +5,7 @@ import { useInView } from "../components/useInView";
 import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight, CheckCircle2, MapPin, Truck } from "lucide-react";
 import FactsSection from "../components/FactsSection";
+import { siteAssets } from "@/lib/site-assets";
 
 const highlights = [
   "Dedicated and professional movers",
@@ -27,12 +28,6 @@ const zones = [
   "Khunti",
 ];
 
-const collageImages = [
-  { src: "/media/hero-1.svg", alt: "Soni Packers and Movers service collage" },
-  { src: "/media/hero-2.svg", alt: "Safe moving and relocation service" },
-  { src: "/media/about-3.svg", alt: "Packing and moving brand visual" },
-];
-
 export default function AboutPage() {
   const { ref: whoRef, isInView: whoInView } = useInView<HTMLDivElement>();
   const { ref: zonesRef, isInView: zonesInView } = useInView<HTMLDivElement>();
@@ -43,7 +38,7 @@ export default function AboutPage() {
         title="About Us"
         subtitle="When you call us, you can rest assured that we'll take care of every detail of your move."
         breadcrumb="About Us"
-        backgroundImage="https://www.adarshindiapackers.com/wp-content/uploads/2026/03/young-happy-delivery-man-with-cardboard-boxes-looking-at-camera-.jpg"
+        backgroundImage={siteAssets.pages.about.heroBanner}
         heightClassName="min-h-[72vh]"
       />
 
@@ -57,8 +52,8 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <div className="group overflow-hidden rounded-2xl bg-slate-900 shadow-2xl shadow-slate-900/15">
                   <img
-                    src={collageImages[0].src}
-                    alt={collageImages[0].alt}
+                    src={siteAssets.common.aboutCollageOne}
+                    alt="Sony Packers and Movers service collage"
                     className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                 </div>
@@ -78,8 +73,8 @@ export default function AboutPage() {
               <div className="mt-0 space-y-4 sm:mt-12">
                 <div className="overflow-hidden rounded-2xl bg-slate-900 shadow-2xl shadow-slate-900/15 transition-transform duration-700 hover:-translate-y-1">
                   <img
-                    src={collageImages[1].src}
-                    alt={collageImages[1].alt}
+                    src={siteAssets.common.aboutCollageTwo}
+                    alt="Safe moving and relocation service"
                     className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
                   />
                 </div>
@@ -91,8 +86,8 @@ export default function AboutPage() {
                 </div>
                 <div className="overflow-hidden rounded-2xl bg-slate-900 shadow-2xl shadow-slate-900/15 transition-transform duration-700 hover:-translate-y-1">
                   <img
-                    src={collageImages[2].src}
-                    alt={collageImages[2].alt}
+                    src={siteAssets.common.aboutCollageThree}
+                    alt="Packing and moving brand visual"
                     className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
                   />
                 </div>
@@ -105,7 +100,7 @@ export default function AboutPage() {
             >
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-green-700">Who We Are</p>
               <h2 className="max-w-2xl text-4xl font-black leading-tight text-slate-950 md:text-6xl">
-                Welcome To Soni Packers and Movers in Ranchi
+                Welcome To Sony Packers and Movers in Ranchi
               </h2>
 
               <div className="mt-6 flex items-start gap-4 rounded-2xl border-l-4 border-orange-500 bg-slate-50 p-5 shadow-sm">
@@ -118,7 +113,7 @@ export default function AboutPage() {
               </div>
 
               <p className="mt-6 text-lg leading-8 text-slate-600">
-                Soni Packers and Movers offers reliable, affordable, and secure relocation services for homes, offices, vehicles,
+                Sony Packers and Movers offers reliable, affordable, and secure relocation services for homes, offices, vehicles,
                 and storage needs across Jharkhand. We focus on professional packing, timely delivery, and complete customer
                 satisfaction from the first call to final unloading.
               </p>
@@ -148,7 +143,7 @@ export default function AboutPage() {
                
 
                 <a
-                  href="https://wa.me/918674823125"
+                  href="https://wa.me/918674823125?text=Hello%21%20I%20need%20a%20shifting%20quote."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg bg-green-500 px-6 py-3 font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-green-600"

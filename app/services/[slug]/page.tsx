@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: "Service Not Found | Soni Packers and Movers",
+      title: "Service Not Found | Sony Packers and Movers",
     };
   }
 
   return {
-    title: `${service.title} | Soni Packers and Movers`,
+    title: `${service.title} | Sony Packers and Movers`,
     description: service.desc,
   };
 }
@@ -76,7 +76,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         subtitle={service.cta.subtitle}
         primaryHref="/get-quote"
         primaryLabel="Get Free Quote"
-        secondaryHref="https://wa.me/8674823125"
+        secondaryHref="https://wa.me/8674823125?text=Hello%21%20I%20need%20a%20shifting%20quote."
         secondaryLabel="WhatsApp Us"
       />
     </>

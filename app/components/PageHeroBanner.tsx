@@ -23,7 +23,7 @@ export default function PageHeroBanner({
     <section ref={ref} className={`relative overflow-hidden bg-slate-950 ${heightClassName}`}>
       <div
         className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35"
-        style={{ backgroundImage: `url('${backgroundImage}')` }}
+        style={{ backgroundImage: backgroundImage ? `url("${encodeURI(backgroundImage)}")` : undefined }}
       />
       <div className="pointer-events-none absolute inset-0 bg-blue-950/65" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-blue-950/70 via-blue-950/45 to-transparent" />

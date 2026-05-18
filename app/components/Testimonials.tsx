@@ -1,45 +1,85 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, User } from "lucide-react";
 import { useInView } from "./useInView";
 
-const reviews = [
+type Review = {
+  name: string;
+  role: string;
+  text: string;
+};
+
+const reviews: Review[] = [
   {
-    name: "Rahul Kumar",
+    name: "Lalit Prasad",
     role: "Home Shifting - Ranchi",
-    image: "https://api.dicebear.com/9.x/adventurer/svg?seed=Rahul",
-    text: "Very professional team. They shifted my 2BHK safely from Ranchi to Jamshedpur without damage.",
+    text: "I had an excellent experience transporting my belongings from Ranchi to Delhi. The team was professional, the manager was responsible, and the packing materials were of top quality. The reasonable rates and smooth service made the entire process completely stress-free. I highly recommend!",
   },
   {
-    name: "Priya Singh",
+    name: "Biswajit Guchait",
     role: "Office Relocation",
-    image: "https://api.dicebear.com/9.x/adventurer/svg?seed=Priya",
-    text: "Quick response, fair quotation, and very polite staff. One of the best moving experiences I had.",
+    text: "A huge shoutout to the team for making my move from Hazaribagh to Kolkata so seamless. Their behavior was wonderful, and they explained the entire logistics process very clearly. The packing was perfect, and I loved that they kept me in the loop with regular updates. Truly an amazing service.",
   },
   {
-    name: "Amit Verma",
+    name: "Mukesh Patel",
     role: "Intercity Move",
-    image: "https://api.dicebear.com/9.x/adventurer/svg?seed=Amit",
-    text: "Office relocation completed smoothly over the weekend. Great planning and execution.",
+    text: "Most reliable and efficient service I ever got, thankyou sony Packers and Movers for great service. I was worried about my household goods, especially about those items which are very delicate and expensive too. After all the things are moved and assembled perfectly, I can say that I have made a perfect choice by going after sony Packers and Movers services. Thank you sony Packers and movers and all staff.",
   },
   {
-    name: "Sneha Das",
+    name: "Vivek",
     role: "Warehouse Support Client",
-    image: "https://api.dicebear.com/9.x/adventurer/svg?seed=Sneha",
-    text: "I used their temporary storage and shifting service together. Team support was responsive and very helpful.",
+    text: "It was a nice experience with SONY packers and movers. They were punctual and packed all my stuff carefully and timely. All my stuff were in good condition after delivery. They settled all my stuff as they said. Must try Sony packers and movers.",
   },
   {
-    name: "Vivek Mishra",
+    name: "K Kumar",
     role: "Bike Transport",
-    image: "https://api.dicebear.com/9.x/adventurer/svg?seed=Vivek",
-    text: "My bike was delivered on time and without even a small scratch. The coordination was excellent.",
+    text: "Outstanding service from start to finish. The team was incredibly professional efficient and courteous throughout the entire moving process from ranchi to patna. Thank you SONY packers and movers.",
   },
   {
-    name: "Anjali Roy",
+    name: "Prakash Kumar",
     role: "Local Household Move",
-    image: "https://api.dicebear.com/9.x/adventurer/svg?seed=Anjali",
-    text: "Packing, loading, and unloading were all handled professionally. The team made the move stress-free.",
+    text: "I moved to Thane, Maharashtra 2 months back along with my family for settling there. I chose Sony packers for relocating my household goods and car there. I was worried about how to relocate goods safely, but Sony assistants were nice and dedicated towards their job. They packed each and every good with safety and also relocated them safely to my place.",
+  },
+  {
+    name: "Priyanka Singh",
+    role: "Local Household Move",
+    text: "I'm very happy with the quality of services provided by Sony Packers and movers. A designated movement manager is assigned to each customer which makes the entire shifting process very convenient.",
+  },
+  {
+    name: "Dewesh Shukla",
+    role: "Local Household Move",
+    text: "Professional packers, save time by providing effective services, including loading, packing, moving, and unloading. Good work",
+  },
+  {
+    name: "Ankit Choubey",
+    role: "Local Household Move",
+    text: "Sony packers do fantastic work and their workers done work properly and all goods should be packed in good manner and transferred it safely",
+  },
+  {
+    name: "30Bheem Besra",
+    role: "Local Household Move",
+    text: "The staff of SONY PACKERS & MOVERS are professional in handling all kinds of packing and moving services. Thank you team. I used the household shifting services to shift my residential goods.",
+  },
+  {
+    name: "Utkarsh Lal",
+    role: "Local Household Move",
+    text: "Very nice service recieved, they shipped my scooty and household items safely. They have nice behaviour of staff too.",
+  },
+  {
+    name: "Binti Kumar Khusi",
+    role: "Local Household Move",
+    text: "Sony Packers & Movers provides exceptional service. They are friendly and professional. The expert team helped me move my office supplies from Gumla to Delhi.",
+  },
+  {
+    name: "Mukul Verma",
+    role: "Local Household Move",
+    text: "Sony packers and movers helped me move my entire household from Ranchi to Tata Motors. Their packing, loading, and transportation were excellent. My experience was quite satisfactory.",
+  },
+  {
+    name: "Sunita Kumari",
+    role: "Local Household Move",
+    text: "Nice service. Manoj ji very-very nice. Thanks mera saman acche se aagya kuch bhi damage nahi hua hai.",
   },
 ];
 
@@ -69,20 +109,19 @@ export default function Testimonials() {
   }, []);
 
   useEffect(() => {
-    const maxIndex = Math.max(reviews.length - visibleCount, 0);
     const id = window.setInterval(() => {
-      setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+      setCurrentIndex((prev) => (prev >= reviews.length - 1 ? 0 : prev + 1));
     }, 4500);
 
     return () => window.clearInterval(id);
-  }, [visibleCount]);
+  }, []);
 
-  const maxIndex = Math.max(reviews.length - visibleCount, 0);
+  const maxIndex = reviews.length - 1;
   const displayIndex = Math.min(currentIndex, maxIndex);
   const translatePercent = displayIndex * (100 / visibleCount);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex ? maxIndex : 0 : prev - 1));
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   const goToNext = () => {
@@ -150,11 +189,10 @@ export default function Testimonials() {
                 >
                   <article className="h-full rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
                     <div className="mb-4 flex items-center gap-3">
-                      <img
-                        src={review.image}
-                        alt={review.name}
-                        className="h-12 w-12 rounded-full border border-slate-200 bg-slate-100"
-                      />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-orange-100 text-orange-600">
+                        <User size={24} />
+                      </div>
+
                       <div>
                         <p className="font-semibold text-slate-900">{review.name}</p>
                         <p className="text-xs text-slate-500">{review.role}</p>

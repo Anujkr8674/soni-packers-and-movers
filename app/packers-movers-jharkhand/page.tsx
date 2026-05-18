@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Globe2, HandCoins, LifeBuoy, MapPinned, Rocket, Star } from "lucide-react";
 import { JharkhandStatePage } from "../components/JharkhandPages";
-import  CallToAction  from "../components/CallToAction";
+import CallToAction from "../components/CallToAction";
+import { siteAssets } from "@/lib/site-assets";
 
 import { jharkhandDistricts } from "./locationData";
 
 export const metadata: Metadata = {
-  title: "Packers and Movers in Jharkhand | Soni Packers and Movers",
+  title: "Packers and Movers in Jharkhand | Sony Packers and Movers",
   description:
     "Trusted packers and movers across Jharkhand with support for Ranchi, Bokaro, Ramgarh, Hazaribagh, and all major districts.",
 };
@@ -19,7 +20,7 @@ export default function JharkhandLandingPage() {
       title="Packers and Movers Across All of Jharkhand"
       eyebrow="Jharkhand's Trusted Shifting Partner"
       subtitle="We help families and businesses shift safely across Jharkhand with reliable packing, loading, transportation, and on-time delivery support."
-      heroImage="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1600&q=80"
+      heroImage={siteAssets.pages.jharkhand.heroBanner}
       introTitle="Packers and Movers Across All of Jharkhand"
       introCopy="We started our journey in Ranchi with a simple goal — to provide safe, affordable, and reliable packing and moving services across Jharkhand. Over the years, we have successfully handled household shifting, office relocation, bike and car transport, loading-unloading, and storage support for customers in every major district. Whether you are moving locally within your city or relocating to another part of Jharkhand, our experienced team ensures proper packing, careful handling, timely transportation, and smooth delivery support from start to finish. With transparent pricing, trained staff, and dedicated customer assistance, we continue to make shifting easier and stress-free for families and businesses across the state."
       highlights={[
@@ -87,9 +88,9 @@ export default function JharkhandLandingPage() {
         },
       ]}
       faqImages={[
-        "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=1200&q=80",
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+        siteAssets.sections.faq.faqSlideOne,
+        siteAssets.sections.faq.faqSlideTwo,
+        siteAssets.sections.faq.faqSlideThree,
       ]}
 
       
