@@ -54,7 +54,7 @@ export default function LeadStatusUpdateModal({ lead, nextStatus, onClose, onSav
       return;
     }
 
-    if (requiresFollowUp && isKolkataDateTimeInPastOrNow(combinedFollowUp)) {
+    if (requiresFollowUp && combinedFollowUp && isKolkataDateTimeInPastOrNow(combinedFollowUp)) {
       setError("Follow-up must be a future date and time.");
       return;
     }

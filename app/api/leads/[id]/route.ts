@@ -57,7 +57,9 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
       return jsonError("Next follow-up date and time are required for Follow-up status", 400);
     }
 
-    if (parsed.data.status === "Follow-up" && parsedFollowUpAt.getTime() <= Date.now()) {
+    const followUpAt = parsedFollowUpAt;
+
+    if (parsed.data.status === "Follow-up" && followUpAt && followUpAt.getTime() <= Date.now()) {
       return jsonError("Follow-up must be a future date and time", 400);
     }
 
@@ -65,7 +67,7 @@ export async function PATCH(request: Request, context: { params: Promise<{ id: s
       where: { id },
       data: {
         status: parsed.data.status,
-        nextFollowUpAt: parsedFollowUpAt,
+        nextFollowUpAt: followUpAt,
         adminNote: normalizedNote || null,
         statusUpdatedAt: new Date(),
       },
