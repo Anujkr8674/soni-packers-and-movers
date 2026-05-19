@@ -6,6 +6,8 @@ import Testimonials from "./Testimonials";
 import FAQSection from "./FAQSection";
 import QuoteForm from "./QuoteForm";
 import CallToAction from "./CallToAction";
+import OperationalCities from "../components/OperationalCities";
+import { operationalCities } from "@/lib/operational-cities";
 import DistrictServiceAreaMap from "./DistrictServiceAreaMap";
 
 import type { BiharDistrict } from "../packers-movers-bihar/locationData";
@@ -409,6 +411,11 @@ export function BiharDistrictPage({
       </section>
       <FactsSection />
       <FAQSection title={`FAQs for ${district.name}`} subtitle={`Common questions people ask before booking a move in ${district.name}.`} faqs={faqs} images={faqImages} />
+       <OperationalCities
+        title="Operational Cities"
+        subtitle="Browse the key city-wise service pages we support across India."
+        cities={operationalCities}
+      />
       <CallToAction />
     </>
   );

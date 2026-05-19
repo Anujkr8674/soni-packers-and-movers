@@ -1,6 +1,6 @@
 'use client';
 
-import { MapPin, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, MapPin } from 'lucide-react';
 
 interface DistrictServiceAreaMapProps {
   districtName: string;
@@ -94,37 +94,38 @@ export default function DistrictServiceAreaMap({
   const uniquePopularRoutes = Array.from(new Set(popularRoutes));
   const uniquePincodeCoverage = Array.from(new Set(pincodeCoverage));
 
-  // Using OpenStreetMap via iframe - no API key required
-//   const osmUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${coords.lng - 0.15},${coords.lat - 0.15},${coords.lng + 0.15},${coords.lat + 0.15}&layer=mapnik`;
-
   const effectiveMapQuery = mapQuery ?? `${districtName}, ${stateName}`;
   const googleMapUrl = `https://maps.google.com/maps?q=${encodeURIComponent(effectiveMapQuery)}&t=&z=12&ie=UTF8&iwloc=&output=embed`;
+  const routeEntries = uniquePopularRoutes
+    .map((route) => {
+      const normalized = route
+        .replace(/\s+to\s+/i, " -> ")
+        .replace(/\s*\u2192\s*/g, " -> ");
+      const [from, ...rest] = normalized.split("->").map((part) => part.trim());
+      const to = rest.join(" -> ").trim();
 
+      if (!from || !to) {
+        return null;
+      }
 
-  // Google Maps link for "Open in Maps"
+      return { from, to, key: route };
+    })
+    .filter((item): item is { from: string; to: string; key: string } => item !== null);
+
   const mapsLink = `https://www.google.com/maps/search/${encodeURIComponent(effectiveMapQuery)}`;
 
   return (
-    <div className="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden animate-pop-in" style={{ animationDelay: "160ms" }}>
-      <div className="relative w-full h-80 md:h-96 bg-slate-100 overflow-hidden animate-fade-up" style={{ animationDelay: "100ms" }}>
-        {/* <iframe
+    <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm animate-pop-in" style={{ animationDelay: "160ms" }}>
+      <div className="relative h-80 w-full overflow-hidden bg-slate-100 md:h-96 animate-fade-up" style={{ animationDelay: "100ms" }}>
+        <iframe
           width="100%"
           height="100%"
           frameBorder="0"
           scrolling="no"
           style={{ border: 0, borderRadius: '12px' }}
-          src={osmUrl}
-        ></iframe> */}
-
-        <iframe
-  width="100%"
-  height="100%"
-  frameBorder="0"
-  scrolling="no"
-  style={{ border: 0, borderRadius: '12px' }}
-  src={googleMapUrl}
-  loading="lazy"
-></iframe>
+          src={googleMapUrl}
+          loading="lazy"
+        />
       </div>
 
       <div className="p-4 md:p-6">
@@ -140,7 +141,7 @@ export default function DistrictServiceAreaMap({
           </div>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-slate-200">
+        <div className="mt-4 border-t border-slate-200 pt-4">
           <a
             href={mapsLink}
             target="_blank"
@@ -156,10 +157,18 @@ export default function DistrictServiceAreaMap({
         <div className="mt-6 space-y-4">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-4 shadow-sm animate-fade-left" style={{ animationDelay: "120ms" }}>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-700">Popular routes</p>
-            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
-              {uniquePopularRoutes.map((route, index) => (
-                <li key={`${route}-${index}`} className="rounded-2xl bg-white px-3 py-2 text-slate-800 shadow-sm">
-                  {route}
+            <ul className="mt-4 space-y-2.5 text-sm leading-6 text-slate-600">
+              {routeEntries.map((route, index) => (
+                <li
+                  key={`${route.key}-${index}`}
+                  className="flex items-center gap-2.5 rounded-2xl bg-white px-3.5 py-2.5 text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-orange-50 text-orange-600">
+                    <MapPin size={14} />
+                  </span>
+                  <span className="min-w-0 flex-1 truncate text-[15px] font-medium">{route.from}</span>
+                  <ArrowRight size={14} className="shrink-0 text-slate-400" />
+                  <span className="min-w-0 flex-1 truncate text-[15px] font-medium text-slate-950">{route.to}</span>
                 </li>
               ))}
             </ul>

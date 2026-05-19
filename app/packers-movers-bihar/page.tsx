@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Globe2, HandCoins, LifeBuoy, MapPinned, Rocket, Star } from "lucide-react";
 import CallToAction from "../components/CallToAction";
+import OperationalCities from "../components/OperationalCities";
+import { operationalCities } from "@/lib/operational-cities";
 import { BiharStatePage } from "../components/BiharPages";
 import { biharDistricts } from "./locationData";
 import { siteAssets } from "@/lib/site-assets";
@@ -90,6 +92,11 @@ export default function BiharLandingPage() {
           siteAssets.sections.faq.faqSlideThree,
         ]}
       />
+       <OperationalCities
+              title="Operational Cities"
+              subtitle="Browse the key city-wise service pages we support across India."
+              cities={operationalCities}
+            />
       <CallToAction />
     </>
   );

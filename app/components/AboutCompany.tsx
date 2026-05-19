@@ -45,7 +45,7 @@ export default function AboutCompany() {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-         <p className="text-lg leading-10 text-slate-600 md:text-[22px]">
+         <p className="text-lg leading-10 text-slate-600 md:text-[16px]">
   Looking for the{" "}
   <span className="font-bold text-slate-900">
     Best Packers and Movers in India

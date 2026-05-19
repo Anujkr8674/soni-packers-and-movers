@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import type { ComponentType } from "react";
 import { BadgeCheck, Clock3, HandCoins, MapPin, PhoneCall, Rocket, ShieldCheck, Truck, Warehouse } from "lucide-react";
 
@@ -31,7 +32,9 @@ type OperationalCityPageProps = {
   overviewTitle: string;
   overviewParagraphs: string[];
   localAreas: string[];
+  localAreaNote?: string;
   nearbyCities: OperationalCity[];
+  nearbyCitiesNote?: string;
   routes: string[];
   pincodeCoverage: string[];
   faqs: FAQItem[];
@@ -70,12 +73,15 @@ export default function OperationalCityPages({
   overviewTitle,
   overviewParagraphs,
   localAreas,
+  localAreaNote,
   nearbyCities,
+  nearbyCitiesNote,
   routes,
   pincodeCoverage,
   faqs,
 }: OperationalCityPageProps) {
   const cityName = city.name;
+  const overviewTitleParts = overviewTitle.split(cityName);
 
   return (
     <>
@@ -134,10 +140,22 @@ export default function OperationalCityPages({
 
               <div className="animate-fade-left" style={{ animationDelay: "120ms" }}>
                 <p className="text-sm font-bold uppercase tracking-[0.34em] text-blue-700">Local route support</p>
-                <h2
-                  className="mt-4 text-3xl font-black text-slate-950 md:text-5xl"
-                  dangerouslySetInnerHTML={{ __html: overviewTitle }}
-                />
+                <h2 className="mt-4 text-3xl font-black text-slate-950 md:text-5xl">
+                  {overviewTitleParts.length === 1 ? (
+                    overviewTitle
+                  ) : (
+                    overviewTitleParts.map((part, index) => (
+                      <Fragment key={`${part}-${index}`}>
+                        {part}
+                        {index < overviewTitleParts.length - 1 && (
+                          <span className="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">
+                            {cityName}
+                          </span>
+                        )}
+                      </Fragment>
+                    ))
+                  )}
+                </h2>
                 <div className="mt-6 space-y-4 text-base leading-8 text-slate-600 md:text-lg [&_strong]:font-extrabold [&_strong]:text-slate-950">
                   {overviewParagraphs.map((paragraph) => (
                     <p key={paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} />
@@ -153,7 +171,7 @@ export default function OperationalCityPages({
 
                 <div className="mt-6 grid gap-4">
                   <div className="rounded-2xl bg-white p-5 shadow-sm animate-pop-in" style={{ animationDelay: "200ms" }}>
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-700">Local areas</p>
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-orange-700">Localities & pickup points</p>
                     <div className="mt-4 flex flex-wrap gap-2">
                       {localAreas.map((item) => (
                         <span
@@ -165,6 +183,7 @@ export default function OperationalCityPages({
                         </span>
                       ))}
                     </div>
+                    {localAreaNote ? <p className="mt-4 text-sm leading-6 text-slate-500">{localAreaNote}</p> : null}
                   </div>
 
                   <div className="rounded-2xl bg-white p-5 shadow-sm animate-fade-up" style={{ animationDelay: "220ms" }}>
@@ -181,6 +200,7 @@ export default function OperationalCityPages({
                         </Link>
                       ))}
                     </div>
+                    {nearbyCitiesNote ? <p className="mt-4 text-sm leading-6 text-slate-500">{nearbyCitiesNote}</p> : null}
                   </div>
                 </div>
               </div>
