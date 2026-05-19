@@ -6,6 +6,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import { ArrowRight, CheckCircle2, MapPin, Truck } from "lucide-react";
 import FactsSection from "../components/FactsSection";
 import { siteAssets } from "@/lib/site-assets";
+import CallToAction from "../components/CallToAction";
+import OperationalCities from "../components/OperationalCities";
+import { operationalCities } from "@/lib/operational-cities";
+
+
 
 const highlights = [
   "Dedicated and professional movers",
@@ -226,6 +231,14 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <OperationalCities
+        title="Operational Cities"
+        subtitle="Browse the key city-wise service pages we support across India."
+        cities={operationalCities}
+      />
+
+      <CallToAction />
     </main>
   );
 }

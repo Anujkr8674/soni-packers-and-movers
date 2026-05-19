@@ -94,10 +94,6 @@ export default function DistrictServiceAreaMap({
   const uniquePopularRoutes = Array.from(new Set(popularRoutes));
   const uniquePincodeCoverage = Array.from(new Set(pincodeCoverage));
 
-  if (!coords) {
-    return null;
-  }
-
   // Using OpenStreetMap via iframe - no API key required
 //   const osmUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${coords.lng - 0.15},${coords.lat - 0.15},${coords.lng + 0.15},${coords.lat + 0.15}&layer=mapnik`;
 
@@ -137,6 +133,9 @@ export default function DistrictServiceAreaMap({
             <h3 className="text-md font-black text-slate-950">{mapHeading ?? `Our Service Area in ${districtName}`}</h3>
             <p className="mt-2 text-sm text-slate-600">
               We cover all neighbourhoods, pincodes & nearby areas of {effectiveMapQuery}.
+            </p>
+            <p className="mt-1 text-xs text-slate-400">
+              {coords ? "Coordinate reference available for this location." : "Google Maps query view enabled for this location."}
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { getSession } from "@/lib/auth";
 import { jsonSuccess, unauthorized } from "@/lib/api-utils";
+import { getKolkataDayRange } from "@/lib/lead-crm";
 import { prisma } from "@/lib/prisma";
 
 export async function GET(request: Request) {
@@ -29,7 +30,9 @@ export async function GET(request: Request) {
     ],
   };
 
-  const [leads, total, statusCounts] = await Promise.all([
+  const { start, end } = getKolkataDayRange();
+
+  const [leads, total, statusCounts, todayFollowUps, overdueFollowUps] = await Promise.all([
     prisma.booking.findMany({
       where,
       orderBy: { createdAt: "desc" },
@@ -43,6 +46,23 @@ export async function GET(request: Request) {
       prisma.booking.count({ where: { status: "Converted" } }),
       prisma.booking.count({ where: { status: "Lost" } }),
     ]),
+    prisma.booking.count({
+      where: {
+        status: "Follow-up",
+        nextFollowUpAt: {
+          gte: start,
+          lt: end,
+        },
+      },
+    }),
+    prisma.booking.count({
+      where: {
+        status: "Follow-up",
+        nextFollowUpAt: {
+          lt: new Date(),
+        },
+      },
+    }),
   ]);
 
   const [newCount, followUpCount, convertedCount, lostCount] = statusCounts;
@@ -52,6 +72,9 @@ export async function GET(request: Request) {
       ...lead,
       moveDate: lead.moveDate.toISOString(),
       createdAt: lead.createdAt.toISOString(),
+      nextFollowUpAt: lead.nextFollowUpAt?.toISOString() ?? null,
+      adminNote: lead.adminNote,
+      statusUpdatedAt: lead.statusUpdatedAt?.toISOString() ?? null,
     })),
     pagination: {
       page,
@@ -65,5 +88,7 @@ export async function GET(request: Request) {
       converted: convertedCount,
       lost: lostCount,
     },
+    todayFollowUps,
+    overdueFollowUps,
   });
 }

@@ -64,6 +64,11 @@ export const siteAssets = {
       heroBanner: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1600&q=80",
     },
 
+    operationalCities: {
+      /** Operational city landing section banner used across the city-specific pages. */
+      heroBanner: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+    },
+
     jharkhand: {
       /** Jharkhand landing page hero banner image used in the statewide intro section. */
       heroBanner: "https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=1600&q=80",

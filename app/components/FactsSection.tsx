@@ -1,6 +1,6 @@
 "use client";
 
-import type { ComponentType } from "react";
+import type { ComponentType, ReactNode } from "react";
 import { ShieldCheck, Truck, Users2 } from "lucide-react";
 import { useInView } from "./useInView";
 
@@ -12,7 +12,7 @@ export type FactItem = {
 };
 
 type FactsSectionProps = {
-  title?: string;
+  title?: ReactNode;
   intro?: string;
   facts?: FactItem[];
   eyebrow?: string;

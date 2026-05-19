@@ -327,28 +327,28 @@ function buildDistrictProfile(districtName: string, slug: string, config: Distri
     introCopy:
       config.introCopy ??
       `We provide packers and movers support in ${districtName} for household shifting, office relocation, vehicle transport, and loading work with careful planning and transparent communication.`,
-    overviewTitle: `Packers and Movers in <span class="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">${districtName}</span>`,
-  overviewParagraphs: [
-  `Looking for the <strong>best packers and movers in ${districtName}</strong> We provide trusted household shifting, office relocation, bike transport, car transport, and complete moving solutions at affordable prices.`,
+        overviewTitle: `Packers and Movers in <span class="bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent">${districtName}</span>`,
+        overviewParagraphs: [
+        `Looking for the <strong>best packers and movers in ${districtName}</strong> We provide trusted household shifting, office relocation, bike transport, car transport, and complete moving solutions at affordable prices.`,
 
-  `Our experienced team offers <strong>safe packing</strong>, <strong>loading</strong>, <strong>unloading</strong>, <strong>transportation</strong>, and <strong>unpacking services</strong> across <strong>${districtName}</strong> and nearby areas with timely delivery support.`,
+        `Our experienced team offers <strong>safe packing</strong>, <strong>loading</strong>, <strong>unloading</strong>, <strong>transportation</strong>, and <strong>unpacking services</strong> across <strong>${districtName}</strong> and nearby areas with timely delivery support.`,
 
-  `As one of the <strong>top-rated packers and movers near ${districtName}</strong>, we help families and businesses relocate locally and across Jharkhand without hassle.`,
+        `As one of the <strong>top-rated packers and movers near ${districtName}</strong>, we help families and businesses relocate locally and across Jharkhand without hassle.`,
 
-  `We cover major localities including <strong>${config.localities.slice(0, 3).join(", ")}</strong> along with nearby residential and commercial areas for fast and reliable shifting services.`,
+        `We cover major localities including <strong>${config.localities.slice(0, 3).join(", ")}</strong> along with nearby residential and commercial areas for fast and reliable shifting services.`,
 
-  `Whether you need local shifting in <strong>${districtName}</strong>, <strong>intercity relocation</strong>, <strong>office moving</strong>, or <strong>vehicle transportation</strong>, our trained staff ensures secure handling and professional support.`,
+        `Whether you need local shifting in <strong>${districtName}</strong>, <strong>intercity relocation</strong>, <strong>office moving</strong>, or <strong>vehicle transportation</strong>, our trained staff ensures secure handling and professional support.`,
 
-  `Customers choose our <strong>movers and packers service in ${districtName}</strong> for transparent pricing, careful goods handling, quick booking assistance, and dependable relocation planning.`,
+        `Customers choose our <strong>movers and packers service in ${districtName}</strong> for transparent pricing, careful goods handling, quick booking assistance, and dependable relocation planning.`,
 
-  `We also provide <strong>nearby packers and movers support</strong> with <strong>pincode-based scheduling</strong>, <strong>same-day shifting assistance</strong>, floor-to-floor handling, and flexible moving options.`,
+        `We also provide <strong>nearby packers and movers support</strong> with <strong>pincode-based scheduling</strong>, <strong>same-day shifting assistance</strong>, floor-to-floor handling, and flexible moving options.`,
 
-  `From small apartments to large office setups, our <strong>packing and moving company in ${districtName}</strong> delivers affordable, safe, and stress-free relocation services.`,
+        `From small apartments to large office setups, our <strong>packing and moving company in ${districtName}</strong> delivers affordable, safe, and stress-free relocation services.`,
 
-  `If you are searching for <strong>reliable movers and packers near me in ${districtName}</strong>, our local team is available for home shifting, storage, transport, and complete relocation assistance.`,
+        `If you are searching for <strong>reliable movers and packers near me in ${districtName}</strong>, our local team is available for home shifting, storage, transport, and complete relocation assistance.`,
 
-  `Our professional <strong>packers and movers service in ${districtName}</strong> is designed for safe household shifting, commercial relocation, furniture moving and long-distance transportation.`,
-],
+        `Our professional <strong>packers and movers service in ${districtName}</strong> is designed for safe household shifting, commercial relocation, furniture moving and long-distance transportation.`,
+      ],
     serviceHighlights,
     localities: config.localities,
     localityNote: `Local pickup and delivery can be arranged across ${config.localities.join(", ")}. We can also coordinate quick surveys and packing support based on your location.`,

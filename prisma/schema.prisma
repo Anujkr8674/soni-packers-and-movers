@@ -26,6 +26,9 @@ model Booking {
   moveType   String
   message    String
   status     String   @default("New")
+  nextFollowUpAt DateTime?
+  adminNote      String?
+  statusUpdatedAt DateTime?
   createdAt  DateTime @default(now())
 }
 
