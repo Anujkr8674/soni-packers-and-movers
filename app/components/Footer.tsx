@@ -86,7 +86,7 @@ export default function Footer() {
               <p className="flex items-center gap-2"><Phone size={16} className="text-orange-400" />6209280901</p>
               <p className="flex items-center gap-2"><Phone size={16} className="text-orange-400" /> 6209580901</p>
                <p className="flex items-start gap-2"><FaWhatsapp size={20} className="mt-0.5 text-green-400" />9835983331</p>
-              <p className="flex items-center gap-2"><Mail size={16} className="text-orange-400" />info@sonypackers.com</p>
+              <p className="flex items-center gap-2"><Mail size={16} className="text-orange-400" />sonypackersranchi@gmail.com</p>
               <p className="flex items-center gap-2"><Clock size={16} className="text-orange-400" />24x7 Support</p>
             </div>
           </div>

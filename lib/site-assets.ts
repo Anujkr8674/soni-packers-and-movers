@@ -26,7 +26,7 @@ export const siteAssets = {
       heroSlideOne: "/media/hero-1.svg",
 
       /** Homepage hero section video used in the main hero carousel for motion and depth. */
-      heroVideo: "https://videos.pexels.com/video-files/4246208/4246208-hd_1920_1080_25fps.mp4",
+      heroVideo: "https://www.pexels.com/download/video/4277372/",
 
       /** Homepage hero section slide image used in the main hero carousel. */
       heroSlideTwo: "/media/hero-2.svg",
@@ -98,13 +98,15 @@ export const siteAssets = {
   sections: {
     heroSlider: {
       /** Home page hero carousel first slide image showing a branded moving service visual. */
-      slideOne: "/media/hero-1.svg",
+     
+
+       
 
       /** Home page hero carousel video slide used between static slides for motion. */
-      video: "https://videos.pexels.com/video-files/4246208/4246208-hd_1920_1080_25fps.mp4",
-
+      video: assetsUrl("/assets/home-slider/vid1.mp4"),
+      slideOne: assetsUrl("/assets/home-slider/image3.png"),
       /** Home page hero carousel second slide image showing a branded moving service visual. */
-      slideTwo: "/media/hero-2.svg",
+      slideTwo: assetsUrl("/assets/home-slider/image2.png"),
     },
 
     whyChooseUs: {
@@ -237,13 +239,13 @@ export const siteAssets = {
 
   common: {
     /** About page collage image used in the company intro section. */
-    aboutCollageOne: "/media/hero-1.svg",
+    aboutCollageOne: assetsUrl("/assets/about/about1.jpg"),
 
     /** About page collage image used in the company intro section. */
-    aboutCollageTwo: "/media/hero-2.svg",
+    aboutCollageTwo: assetsUrl("/assets/about/about3.jpg"),
 
     /** About page collage image used in the company intro section. */
-    aboutCollageThree: "/media/about-3.svg",
+    aboutCollageThree: assetsUrl("/assets/about/about2.jpg"),
 
     /** Shared service preview image used in hero overlays and fallback sections. */
     movingTeamOne: "https://images.unsplash.com/photo-1600518464441-9154a4dea21b?auto=format&fit=crop&w=1200&q=80",

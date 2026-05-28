@@ -5,21 +5,28 @@ import QuoteForm from "../components/QuoteForm";
 import { siteAssets } from "@/lib/site-assets";
 
 const cities = [
-  "Ranchi",
-  "Dhanbad",
-  "Jamshedpur",
-  "Bokaro",
-  "Hazaribagh",
-  "Deoghar",
-  "Giridih",
-  "Ramgarh",
-  "Dumka",
-  "Chaibasa",
-  "Koderma",
-  "Lohardaga",
-  "Pakur",
-  "Godda",
-  "Chatra",
+ "Ranchi",
+"Dhanbad",
+"Jamshedpur",
+"Bokaro",
+"Hazaribagh",
+"Deoghar",
+"Patna",
+"Gaya",
+"Muzaffarpur",
+"Delhi",
+"Noida",
+"Kolkata",
+"Mumbai",
+"Pune",
+"Ahmedabad",
+"Surat",
+"Bangalore",
+"Hyderabad",
+"Chennai",
+"Lucknow",
+"Jaipur",
+"Bhubaneswar",
 ];
 
 export default function ContactPage() {
@@ -61,7 +68,7 @@ export default function ContactPage() {
                 </p>
                 <p className="flex gap-3 rounded-2xl bg-white/5 px-4 py-4 text-slate-100">
                   <Mail size={18} className="mt-0.5 shrink-0 text-orange-400" />
-                  info@sonypackers.com
+                  sonypackersranchi@gmail.com
                 </p>
                 <p className="flex gap-3 rounded-2xl bg-white/5 px-4 py-4 text-slate-100">
                   <Clock size={18} className="mt-0.5 shrink-0 text-orange-400" />
@@ -76,7 +83,7 @@ export default function ContactPage() {
           </div>
 
           <section className="mt-10 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-            <h3 className="text-2xl font-black text-slate-950">Cities We Serve in Jharkhand</h3>
+            <h3 className="text-2xl font-black text-slate-950">Cities We Serve Across India</h3>
             <div className="mt-5 flex flex-wrap gap-3">
               {cities.map((city) => (
                 <span
@@ -87,7 +94,7 @@ export default function ContactPage() {
                 </span>
               ))}
             </div>
-            <p className="mt-5 text-slate-500">+ all 24 districts of Jharkhand and pan-India intercity routes</p>
+            <p className="mt-5 text-slate-500">Safe, Reliable & Hassle-Free Relocation Across All Major Indian Cities.</p>
           </section>
         </div>
       </section>

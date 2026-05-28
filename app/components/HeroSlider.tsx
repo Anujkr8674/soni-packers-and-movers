@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Check, ChevronLeft, ChevronRight, Clock3, MapPin, Shield } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -11,26 +12,32 @@ type MediaItem = {
   src: string;
   title: string;
   subtitle: string;
+  mobileObjectPosition?: string;
 };
 
 const slides: MediaItem[] = [
-  {
-    type: "image",
-    src: siteAssets.sections.heroSlider.slideOne,
-    title: "Trusted Packers and Movers in Ranchi",
-    subtitle: "Safe packing, fast shifting, and transparent pricing from start to finish.",
-  },
   {
     type: "video",
     src: siteAssets.sections.heroSlider.video,
     title: "Professional Team and Modern Moving Fleet",
     subtitle: "Well-trained staff and managed logistics for stress-free relocation.",
+    mobileObjectPosition: "object-center",
   },
+  
+  {
+    type: "image",
+    src: siteAssets.sections.heroSlider.slideOne,
+    title: "Trusted Packers and Movers in Ranchi",
+    subtitle: "Safe packing, fast shifting, and transparent pricing from start to finish.",
+    mobileObjectPosition: "object-[58%_center]",
+  },
+ 
   {
     type: "image",
     src: siteAssets.sections.heroSlider.slideTwo,
     title: "Household, Office and Vehicle Relocation",
     subtitle: "End-to-end support from Ratu Road, Ranchi to anywhere in India.",
+    mobileObjectPosition: "object-[70%_center]",
   },
 ];
 
@@ -56,9 +63,16 @@ export default function HeroSlider() {
           }`}
         >
           {slide.type === "image" ? (
-            <img src={slide.src} alt={slide.title} className="h-full w-full object-cover scale-[1.03]" />
+            <Image
+              src={slide.src}
+              alt={slide.title}
+              fill
+              priority={idx === current}
+              sizes="100vw"
+              className={`object-cover transition-transform duration-700 ${slide.mobileObjectPosition ?? "object-center"} sm:object-center md:scale-[1.03]`}
+            />
           ) : (
-            <video src={slide.src} className="h-full w-full object-cover scale-[1.03]" autoPlay muted loop playsInline />
+            <video src={slide.src} className="h-full w-full object-cover object-center md:scale-[1.03]" autoPlay muted loop playsInline />
           )}
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/58 to-black/35" />
           <div className="absolute inset-0 mx-auto flex max-w-7xl items-center px-4 pb-24 pt-20 sm:px-6 sm:pb-28 md:pt-0 lg:px-8">

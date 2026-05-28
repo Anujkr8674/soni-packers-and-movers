@@ -54,10 +54,10 @@ export default function Process() {
                 }`}
               />
             ))}
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+            {/* <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5">
               <p className="text-sm uppercase tracking-wide text-orange-200">Auto carousel</p>
               <p className="text-lg font-semibold text-white">Packing and moving operations in action</p>
-            </div>
+            </div> */}
             <div className="absolute bottom-4 right-4 flex gap-2">
               {processSlides.map((_, idx) => (
                 <span
