@@ -20,17 +20,27 @@ const highlights = [
 
 const zones = [
   "Ranchi",
+
   "Jamshedpur",
-  "Dhanbad",
   "Bokaro",
-  "Hazaribagh",
-  "Ramgarh",
-  "Deoghar",
-  "Giridih",
-  "Medininagar",
-  "Dumka",
-  "Jamtara",
-  "Khunti",
+
+
+  "Patna",
+  "Gaya",
+
+  "Delhi",
+  "Noida",
+  "Kolkata",
+  "Mumbai",
+  "Pune",
+  "Ahmedabad",
+  "Surat",
+  "Bangalore",
+  "Hyderabad",
+  "Chennai",
+  "Lucknow",
+  "Jaipur",
+  "Bhubaneswar"
 ];
 
 export default function AboutPage() {
@@ -145,7 +155,7 @@ export default function AboutPage() {
                   Get in touch
                   <ArrowRight size={18} />
                 </a>
-               
+
 
                 <a
                   href="https://wa.me/918674823125?text=Hello%21%20I%20need%20a%20shifting%20quote."
@@ -171,13 +181,12 @@ export default function AboutPage() {
               className={`rounded-3xl bg-slate-900 p-6 text-white shadow-2xl shadow-slate-900/15 transition-all duration-1000 ease-out ${zonesInView ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
                 }`}
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-orange-300">Where We Operate in Jharkhand</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-orange-300">Trusted Relocation Services Across India</p>
               <h2 className="mt-3 text-3xl font-black leading-tight md:text-4xl">
-                Reliable packing and moving support across key Jharkhand cities
+                Reliable Relocation Services Across India
               </h2>
               <p className="mt-4 max-w-xl text-slate-300">
-                Based in Ranchi, we support local and intercity relocations across major Jharkhand locations with the same care,
-                planning, and timely execution.
+                We handle local and intercity moves nationwide with safe packing, smooth transportation, and on-time delivery support.
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -203,8 +212,7 @@ export default function AboutPage() {
             >
               <h3 className="text-2xl font-bold text-slate-950">Service coverage snapshot</h3>
               <p className="mt-3 leading-7 text-slate-600">
-                From Ranchi and nearby localities to cities like Jamshedpur, Dhanbad, Bokaro, and Deoghar, we help families and
-                businesses relocate without the usual stress.
+                Serving customers across India, we provide hassle-free local and intercity relocation services with professional handling and timely delivery.
               </p>
 
               <div className="mt-6 grid gap-4">
@@ -215,9 +223,11 @@ export default function AboutPage() {
                   </p>
                 </div>
                 <div className="rounded-2xl bg-slate-50 p-5 transition-transform duration-500 hover:-translate-y-1">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-700">Intercity routes</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-700">
+                    Pan India Routes
+                  </p>
                   <p className="mt-2 text-slate-700">
-                    Jamshedpur, Dhanbad, Bokaro, Hazaribagh, Ramgarh, Giridih, Deoghar, Dumka, and Medininagar.
+                    Delhi, Mumbai, Kolkata, Bangalore, Hyderabad, Chennai, Pune, Patna, Bhubaneswar, Ahmedabad, and other major cities across India.
                   </p>
                 </div>
                 <div className="rounded-2xl bg-slate-900 p-5 text-white transition-transform duration-500 hover:-translate-y-1">
